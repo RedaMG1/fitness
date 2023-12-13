@@ -63,7 +63,7 @@
 											delete</button>
 										{# <input type="hidden" name="_token" value="{{ csrf_token('action-item' ~ program.id) }}"> #}
 										{#  ~     pour concaténer des chaines en twig #}
-										<a class="btn btn-primary btn-sm" formaction="" href = "#">
+										<a class="btn btn-primary btn-sm" href = "{{ path('app_day',{'id':program.id}) }}">
 										<i title="Edit">
 											<i class="fa fa-pencil"></i>
 											Start Training</a>
