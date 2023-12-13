@@ -57,6 +57,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Program::class)]
     private Collection $programs;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $gender = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $hight = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $weight = null;
+
     public function __construct()
     {
         $this->created_at = new DateTime();
@@ -244,6 +253,42 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $program->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function isGender(): ?bool
+    {
+        return $this->gender;
+    }
+
+    public function setGender(?bool $gender): static
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    public function getHight(): ?float
+    {
+        return $this->hight;
+    }
+
+    public function setHight(?float $hight): static
+    {
+        $this->hight = $hight;
+
+        return $this;
+    }
+
+    public function getWeight(): ?float
+    {
+        return $this->weight;
+    }
+
+    public function setWeight(?float $weight): static
+    {
+        $this->weight = $weight;
 
         return $this;
     }

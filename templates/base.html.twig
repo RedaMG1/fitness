@@ -18,7 +18,7 @@
 		<nav
 			class="navbar navbar-expand-md navbar-dark fixed-top">
 			<!-- Brand -->
-			<a class="navbar-brand" href="{{ path('home')}}">Food Restorant</a>
+			<a class="navbar-brand" href="{{ path('home')}}">Fit Flare</a>
 
 			<!-- Toggler/collapsible Button -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -34,7 +34,12 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{{ path('program') }}">Program</a>
 					</li>
-					
+					<li class="nav-item">
+						<a class="nav-link" href="">Stats</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="">Social</a>
+					</li>
 
 					{# {% if is_granted('ROLE_ADMIN') %}
 						<li class="nav-item">
@@ -45,7 +50,7 @@
 					{% if app.user %}
 						<li class="nav-item dropdown ml-auto">
 							<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-								{{ app.user.firstName }}
+								{{ app.user.username }}
 							</a>
 							<div class="dropdown-menu" style="background-color: #ffffff;">
 								<a class="dropdown-item" href="" style="color: black;">Profile</a>

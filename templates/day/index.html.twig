@@ -44,8 +44,19 @@
 						<tr>
 							<td>{{ day.id }}</td>
 							<td> Day {{ day.currentDay }}</td>
-							<td>[Biceps Chest]</td>
-							<td>yes</td>
+								<td>
+									{% for item in day.workout %}
+										{{ item }}
+									{% endfor %}
+								</td>
+							<td>
+							{% if day.cardio == 1 %}
+							{{ 'yes' }}
+							{% else %}
+							{{ 'no' }}
+							{% endif %}
+							
+							</td>
 							<td>19h</td>
 							<td>20:30h</td>
 							
